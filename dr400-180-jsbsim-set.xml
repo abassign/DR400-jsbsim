@@ -50,7 +50,11 @@
     <dr400>
       <file>Aircraft/DR400-jsbSim/Nasal/dr400-180.nas</file>
     </dr400>
+    <egal><!-- muss der Name der Datei entsprechen? -->
+     <file>Aircraft/DR400-jsbSim/Nasal/meine.nas</file>
+    </egal>
   </nasal>
+  
 
 </PropertyList>
 

@@ -19,6 +19,15 @@
     </binding>
    </key>
 
+   <key n="108">
+     <name>l</name>
+     <desc>Aktiviere NASAL</desc>
+     <binding>
+       <command>nasal</command>
+       <script>egal.irgendwas();</script> <!-- meine/egal ist DEVICE in -set XML, irgendwas ist func in meine.nas -->
+     </binding>
+   </key>
+
    
    <key n="115">
     <name>s</name>
