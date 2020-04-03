@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>on-off-R.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>on-off</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>on-off-R.dds</texture>
+  </animation>
+
+  <animation>
+    <object-name>on-off</object-name>
+    <type>rotate</type>
+    <property>/controls/engines/engine/master-alt-pos</property>
+    <factor>35</factor>
+    <min-deg>0</min-deg>
+    <max-deg>35</max-deg>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+    
+  <animation>
+    <type>pick</type>
+    <object-name>on-off</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine/master-alt</property>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>alt-switch</tooltip-id>
+        <label>Electric alternator: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/engines/engine/master-alt</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>
+
+

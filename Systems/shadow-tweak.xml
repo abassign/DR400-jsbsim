@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<system name="fake_shadow">
+
+  <channel name="gear agl m">
+    <fcs_function name="position/gear-agl-m">
+      <function>
+        <sum>
+          <product>
+            <property>position/h-agl-ft</property>
+            <value>0.3048</value> <!--ft to m -->
+          </product>  
+          <value>-1.0</value>
+        </sum>
+      </function>
+      <output>/position/gear-agl-m</output>
+    </fcs_function>
+  </channel>
+
+</system>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-180-jsbSim by PAF team
+ # April 2013 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+    <object-name>sieges</object-name>
+    <object-name>ceintures</object-name>
+    <object-name>sono</object-name>
+    <object-name>longeronint</object-name>
+    <object-name>toitverriereint</object-name>
+    <object-name>poignee_canopy</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+    <object-name>sieges</object-name>
+    <object-name>ceintures</object-name>
+    <object-name>sono</object-name>
+    <object-name>longeronint</object-name>
+    <object-name>toitverriereint</object-name>
+    <object-name>poignee_canopy</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>interior.dds</texture>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/DR400-jsbSim/Models/Effects/glass_shader.png</texture>
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+
+    <condition>
+      <not><property>/sim/model/config/use-dds</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/DR400-jsbSim/Models/Effects/glass_shader.dds</texture>
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>intverriere</object-name>
+    <object-name>intverriere2</object-name>
+    <condition>
+      <property>sim/model/config/glass-reflection</property>
+    </condition>
+  </animation>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/DR400-jsbSim/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -1.474 </x-m>
+      <y-m> -0.251 </y-m>
+      <z-m> -0.029 </z-m>
+    </offsets>
+  </model>
+
+<!-- Plaque interieur canopy -->
+  <model>
+    <path>Aircraft/DR400-jsbSim/Models/Interior/Panel/Instruments/plaques/plaque_canopy.xml</path>
+    <offsets>
+      <x-m> -0.991 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.701 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/DR400-jsbSim/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -1.859 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.099 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>  -5.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Les palonniers -->
+  <model>
+    <path>Aircraft/DR400-jsbSim/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -2.047 </x-m>
+      <y-m> -0.234 </y-m>
+      <z-m> -0.225 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/DR400-jsbSim/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -2.047 </x-m>
+      <y-m>  0.234 </y-m>
+      <z-m> -0.225 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Manche -->
+  <model>
+    <path>Aircraft/DR400-jsbSim/Models/Interior/Handle/handle.xml</path>
+    <offsets>
+      <x-m> -1.497 </x-m>
+      <y-m>  0    </y-m>
+      <z-m> -0.21 </z-m>
+    </offsets>
+  </model>
+ 
+
+  <!-- Canopy -->
+
+  <animation>
+    <type>translate</type>
+    <object-name>intverriere</object-name>
+    <object-name>longeronint</object-name>
+    <object-name>toitverriereint</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.12 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 0.80 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>poignee_canopy</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind>  0.00 </ind><dep>  0.00 </dep></entry>
+      <entry><ind>  0.12 </ind><dep> 45.00 </dep></entry>
+      <entry><ind>  1.00 </ind><dep> 45.00 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z>  1 </z>
+    </axis>
+    <center>
+      <x-m> -1.064 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>poignee_canopy</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 0.12 </ind><dep> 0.00 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 0.80 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -0.0625 </x>
+      <y>  0.0625 </y>
+      <z>  0.000 </z>
+    </axis>
+  </animation>
+
+
+  
+  <animation>
+    <type>pick</type>
+    <object-name>poignee_canopy</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>globals.dr400.doorsystem.crewexport();</script>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>fuel-valve.ac</path>
+    
+  <animation>
+    <object-name>FuelSelect</object-name>
+    <object-name>base</object-name>
+    <object-name>start</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>FuelSelect</object-name>
+    <object-name>base</object-name>
+    <object-name>start</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>tank-select.dds</texture>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+   <object-name>FuelSelect</object-name>
+   <action>
+     <name>decrease mags: click</name>
+     <button>0</button>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>property-adjust</command>
+       <property>controls/fuel/selected-tank</property>
+       <step>1</step>
+       <min>-1</min>
+       <max>3</max>
+       <wrap>true</wrap>
+     </binding>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>nasal</command>
+       <script>dr400.FuelValve(90)</script>
+     </binding>
+   </action>
+   <action>
+     <name>decrease mags: click</name>
+     <button>1</button>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>property-adjust</command>
+       <property>controls/fuel/selected-tank</property>
+       <step>-1</step>
+       <min>-1</min>
+       <max>3</max>
+       <wrap>true</wrap>
+     </binding>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>nasal</command>
+       <script>dr400.FuelValve(-90)</script>
+     </binding>
+   </action>
+   <action>
+     <name>decrease mags: scroll</name>
+     <button>3</button>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>property-adjust</command>
+       <property>controls/fuel/selected-tank</property>
+       <step>1</step>
+       <min>-1</min>
+       <max>3</max>
+       <wrap>true</wrap>
+     </binding>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>nasal</command>
+       <script>dr400.FuelValve(90)</script>
+     </binding>
+   </action>
+   <action>
+     <name>increase mags: scroll</name>
+     <button>4</button>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>property-adjust</command>
+       <property>controls/fuel/selected-tank</property>
+       <step>-1</step>
+       <min>-1</min>
+       <max>3</max>
+       <wrap>true</wrap>
+     </binding>
+     <binding>
+       <condition>
+         <not><property>controls/fuel/selected-tank-lock</property></not>
+       </condition>
+       <command>nasal</command>
+       <script>dr400.FuelValve(-90)</script>
+     </binding>
+   </action>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+   <object-name>start</object-name>
+   <visible>true</visible>
+   <action>
+     <name>starter</name>
+     <button>0</button>
+     <binding>
+       <command>property-assign</command>
+       <property>/controls/engines/engine/starter_cmd</property>
+       <value>1</value>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>property-assign</command>
+         <property>/controls/engines/engine/starter_cmd</property>
+         <value>0</value>
+       </binding>
+     </mod-up>
+   </action>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>FuelSelect</object-name>
+    <property>controls/fuel/selected-tank-pos</property>
+    <factor>1</factor>
+    <!--<offset-deg>90</offset-deg>-->
+    <axis> 
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+    <center>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>  
+    </center>
+  </animation>
+
+  <animation> 
+    <type>translate</type>
+    <object-name>start</object-name>
+    <property>controls/engines/engine/starter_cmd-pos</property>
+    <factor>-0.0034</factor>
+    <axis> 
+      <x>  1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- TEXT OSG -->
+  <text>
+    <name>textosg</name>
+    <type type="string">literal</type>
+    <text type="string">Fuel Selector</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.014</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.06</max-height>
+    <max-width>0.08</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m>  0.018 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </offsets>
+  </text>
+
+  <!-- TEXT OSG -->
+  <text>
+    <name>textosg</name>
+    <type type="string">literal</type>
+    <text type="string">Starter</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.014</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.06</max-height>
+    <max-width>0.08</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m>  0.010 </x-m>
+      <y-m>  0.050 </y-m>
+      <z-m>  0.020 </z-m>
+    </offsets>
+  </text>
+
+  <animation>
+    <type>material</type>
+    <object-name>textosg</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>textosg</object-name>
+    <condition>
+      <property>sim/panel-hotspots</property>
+    </condition>
+  </animation>
+ 
+</PropertyList>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList> 
+
+  <path>pedals.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Pedal-L</object-name>
+    <object-name>Pedal-R</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>pedals.dds</texture>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Pedal-L</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>0.1</factor>
+    <axis>
+      <x> 1.0 </x>
+      <y> 0.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Pedal-L</object-name>
+    <property>controls/gear/brake-left</property>
+    <factor>-25</factor>
+    <axis>
+      <x> 0.0 </x>
+      <y> 1.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Pedal-R</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-0.1</factor>
+    <axis>
+      <x> 1.0 </x>
+      <y> 0.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Pedal-R</object-name>
+    <property>controls/gear/brake-right</property>
+    <factor>-25</factor>
+    <axis>
+      <x> 0.0 </x>
+      <y> 1.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

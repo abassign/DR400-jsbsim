@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>mixture-trimsindicator.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>mixture</object-name>
+    <object-name>mixtureplus</object-name>
+    <object-name>mixturemoins</object-name>
+    <object-name>trimsplus</object-name>
+    <object-name>trimsmoins</object-name>
+    <object-name>trimindicator</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>mixture</object-name>
+    <object-name>mixtureplus</object-name>
+    <object-name>mixturemoins</object-name>
+    <object-name>trimsplus</object-name>
+    <object-name>trimsmoins</object-name>
+    <object-name>trimindicator</object-name>
+    <object-name>labels-mixture</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>mixture-trimsindicator.dds</texture>
+  </animation>
+
+  <!-- Mixture -->  
+  <animation>
+    <type>rotate</type>
+    <object-name>mixture</object-name>
+    <property>controls/engines/engine[0]/mixture</property>
+    <factor>60</factor>
+    <offset-deg>-60</offset-deg>
+    <center>
+      <x-m> -0.043 </x-m>
+      <y-m>  0.018 </y-m>
+      <z-m> -0.027 </z-m>
+    </center>
+    <axis>
+      <x>  0.0 </x>
+      <y> -1.0 </y>
+      <z>  0.0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>slider</type>
+    <object-name>mixture</object-name>
+    <drag-direction>vertical</drag-direction>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[0]/mixture</property>
+        <factor>0.05</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Mixture: %3d%%</label>
+        <measure-text>Mixture: 100%</measure-text>
+        <tooltip-id>mixture</tooltip-id>
+        <mapping>percent</mapping>
+        <property>controls/engines/engine[0]/mixture</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>mixture</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.05</interval-sec>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/mixture-coupled</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>dr400.set_levers("mixture",0,-1,1);</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/mixture-coupled</property>
+          <value>1</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>mixtureplus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine[0]/mixture</property>
+        <step type="double">0.05</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>mixturemoins</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine[0]/mixture</property>
+        <step type="double">-0.05</step>
+      </binding>          
+    </action>
+  </animation>
+
+  <!-- Elevator Trim control (NOT FLAPS!) -->
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>trimsplus</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/flight/elevator-trim</property>
+        <step type="double">0.003</step>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>trimsmoins</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/flight/elevator-trim</property>
+        <step type="double">-0.003</step>
+      </binding>          
+    </action>
+  </animation>
+                                    
+  <animation>
+    <type>translate</type>
+    <object-name>trimindicator</object-name>
+    <property>/controls/flight/elevator-trim</property>
+    <interpolation>
+      <entry><ind>  1 </ind> <dep>  0.00 </dep></entry>
+      <entry><ind> -1 </ind> <dep>  0.07 </dep></entry>
+    </interpolation>
+    <axis>
+      <x>  0.27 </x>
+      <y>  0.00 </y>
+      <z> -0.66 </z>
+    </axis>
+  </animation>
+
+  <!-- TEXT OSG -->
+  <text>
+    <name>textosg</name>
+    <type type="string">literal</type>
+    <text type="string">Trim Indicator</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.014</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.06</max-height>
+    <max-width>0.05</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m>  0.010 </x-m>
+      <y-m> -0.030 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> -30 </pitch-deg>
+    </offsets>
+  </text>
+
+  <text>
+    <name>textosg</name>
+    <type type="string">literal</type>
+    <text type="string">Mixture</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.014</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.06</max-height>
+    <max-width>0.08</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m>  0.010 </x-m>
+      <y-m>  0.020 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> -30 </pitch-deg>
+    </offsets>
+  </text>
+
+  <animation>
+    <type>material</type>
+    <object-name>textosg</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>textosg</object-name>
+    <condition>
+      <property>sim/panel-hotspots</property>
+    </condition>
+  </animation>
+
+</PropertyList>

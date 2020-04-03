@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-120  by PAF team
+ # Oct 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<system name="crash-detect">
+
+
+  <channel name="Over-G">
+
+     <!--
+          Detect wing loads that exceed limits.
+          Operational limits are +4.4 or -2.2 Gs at 1984 lbs
+          gross weight.  IE +8730 lbs and
+          -4365 lbs.  This allows for a 40% engineering
+          margin of safety before actual structural
+          failure.   At higher gross weights the wing
+          structure will fail at lower G loadings.
+     -->
+
+     <switch name="systems/crash-detect/over-g-damaged">
+          <test value="1">
+                forces/fbz-aero-lbs lt -8730
+          </test>
+          <test value="1">
+                forces/fbz-aero-lbs gt 4365
+          </test>
+     </switch>
+
+     <switch name="systems/crash-detect/over-g-crashed">
+          <test value="1">
+                forces/fbz-aero-lbs lt -12220
+          </test>
+          <test value="1">
+                forces/fbz-aero-lbs gt 6110
+          </test>
+     </switch>  
+ 
+  </channel>
+
+
+
+
+  <channel name="gear-impact">
+
+     <!-- Detect gear loads that exceed limits (5 Gs) -->
+
+     <switch name="systems/crash-detect/gear-damaged">
+          <test value="1">
+                forces/fbz-gear-lbs lt -9920
+          </test>
+     </switch>
+  
+      <switch name="systems/crash-detect/gear-destroyed">
+          <test value="1">
+                forces/fbz-gear-lbs lt -13890
+          </test>
+     </switch>
+  
+  </channel>
+  
+
+  <channel name="ground-impact">
+
+     <!-- Detect severe ground impact crash (about 10 Gs) -->
+
+     <switch name="systems/crash-detect/total-crash">
+          <test value="1">
+                accelerations/udot-ft_sec2 lt -333
+          </test>
+     </switch>
+  
+  </channel>
+  
+  <channel name="damaged">
+
+     <!-- to display a message by nasal if the aircraft is damaged -->
+
+     <switch name="/sim/damaged">
+        <test value="1">
+           systems/crash-detect/over-g-damaged == 1
+        </test>
+        <test value="1">
+           systems/crash-detect/gear-damaged == 1
+        </test>
+     </switch>
+  
+  </channel>
+   
+  <channel name="crashed">
+
+     <!-- to end the sim by nasal if the aircraft is crashed -->
+
+     <switch name="/sim/crashed">
+        <test value="1">
+           systems/crash-detect/over-g-crashed == 1
+        </test>
+        <test value="1">
+           systems/crash-detect/gear-destroyed == 1
+        </test>
+        <test value="1">
+           systems/crash-detect/total-crash == 1
+        </test>
+     </switch>
+  
+  </channel>
+
+
+</system>

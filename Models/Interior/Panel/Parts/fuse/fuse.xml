@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>fuse.ac</path>
+
+  <animation>
+    <object-name>Fusible</object-name>
+    <object-name>Fusible.001</object-name>
+    <object-name>Fusible.002</object-name>
+    <object-name>Fusible.003</object-name>
+    <object-name>Fusible.004</object-name>
+    <object-name>Fusible.005</object-name>
+    <object-name>Fusible.006</object-name>
+    <object-name>Fusible.007</object-name>
+    <object-name>Fusible.008</object-name>
+    <object-name>Fusible.009</object-name>
+    <object-name>Fusible.010</object-name>
+    <object-name>Fusible.011</object-name>
+    <object-name>Fusible.012</object-name>
+    <object-name>Fusible.013</object-name>
+    <object-name>Fusible.014</object-name>
+    <object-name>Fusible.015</object-name>
+    <object-name>plaque</object-name>
+    <object-name>support</object-name>
+    <object-name>support.001</object-name>
+    <object-name>support.002</object-name>
+    <object-name>support.003</object-name>
+    <object-name>support.004</object-name>
+    <object-name>support.005</object-name>
+    <object-name>support.006</object-name>
+    <object-name>support.007</object-name>
+    <object-name>support.008</object-name>
+    <object-name>support.009</object-name>
+    <object-name>support.010</object-name>
+    <object-name>support.011</object-name>
+    <object-name>support.012</object-name>
+    <object-name>support.013</object-name>
+    <object-name>support.014</object-name>
+    <object-name>support.015</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Fusible</object-name>
+    <object-name>Fusible.001</object-name>
+    <object-name>Fusible.002</object-name>
+    <object-name>Fusible.003</object-name>
+    <object-name>Fusible.004</object-name>
+    <object-name>Fusible.005</object-name>
+    <object-name>Fusible.006</object-name>
+    <object-name>Fusible.007</object-name>
+    <object-name>Fusible.008</object-name>
+    <object-name>Fusible.009</object-name>
+    <object-name>Fusible.010</object-name>
+    <object-name>Fusible.011</object-name>
+    <object-name>Fusible.012</object-name>
+    <object-name>Fusible.013</object-name>
+    <object-name>Fusible.014</object-name>
+    <object-name>Fusible.015</object-name>
+    <object-name>plaque</object-name>
+    <object-name>support</object-name>
+    <object-name>support.001</object-name>
+    <object-name>support.002</object-name>
+    <object-name>support.003</object-name>
+    <object-name>support.004</object-name>
+    <object-name>support.005</object-name>
+    <object-name>support.006</object-name>
+    <object-name>support.007</object-name>
+    <object-name>support.008</object-name>
+    <object-name>support.009</object-name>
+    <object-name>support.010</object-name>
+    <object-name>support.011</object-name>
+    <object-name>support.012</object-name>
+    <object-name>support.013</object-name>
+    <object-name>support.014</object-name>
+    <object-name>support.015</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>color_fusibles_tableau.dds</texture>
+  </animation>
+
+  <!--animation>
+   <type>pick</type>
+   <visible>true</visible>
+   <object-name>Fusible</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/circuit-breakers/ess-bus</property>
+      <value type="bool">true</value>
+    </binding>          
+   </action>
+  </animation>
+
+  <animation>
+   <type>translate</type>
+   <object-name>Fusible</object-name>
+   <property>controls/circuit-breakers/ess-bus</property>
+   <factor>0.008</factor>
+   <axis>
+    <x> -1 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+   </axis>
+  </animation-->
+
+</PropertyList>

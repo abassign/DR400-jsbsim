@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+  <name></name>
+	<checklists>
+		<checklist n="0">
+			<title>Checks before engine start</title>
+			<line>
+				<text>Preflight check</text>
+				<result>COMPLETED</result>
+			</line>
+			<line>
+				<text>Canopy</text>
+				<result>CLOSED</result>
+			</line>
+			<line>
+				<text>Parking brake</text>
+				<result>LOCKED</result>
+			</line>
+			<line>
+				<text>Electric master</text>
+				<result>ON</result>
+			</line>
+		</checklist>
+		
+		<checklist n="1">
+			<title>Engine start procedure</title>
+			<line>
+				<text>Carb. heat</text>
+				<result>COLD (pushed)</result>
+			</line>
+			<line>
+				<text>Mixture</text>
+				<result>FULL RICH</result>
+			</line>
+			<line>
+				<text>Anticol light</text>
+				<result>ON</result>
+			</line>
+			<line>
+				<text>Gauges</text>
+				<result>VERIFIED</result>
+			</line>
+			<line>
+				<text>Fuel selector</text>
+				<result>OPEN</result>
+			</line>
+			<line>
+				<text>Magnetos</text>
+				<result>LEFT</result>
+			</line>
+			<line>
+				<text>Electrical pump</text>
+				<result>ON</result>
+			</line>
+			<line>
+				<text>Throttle</text>
+				<result>1/4</result>
+			</line>
+			<line>
+				<text>Propeller</text>
+				<result>DEGAGED</result>
+			</line>
+			<line>
+				<text>Starter</text>
+				<result>PRESS (15~20 seconds max)</result>
+			</line>
+			<line>
+				<text>When engine is started, magnetos</text>
+				<result>BOTH</result>
+			</line>
+		</checklist>
+		
+		<checklist n="2">
+			<title>Check after engine start</title>
+			<line>
+				<text>RPM</text>
+				<result>1200</result>
+			</line>
+			<line>
+				<text>Electrical pump</text>
+				<result>OFF</result>
+			</line>
+			<line>
+				<text>Alternator</text>
+				<result>ON</result>
+			</line>
+			<line>
+				<text>Voltmeter</text>
+				<result>CHECKED (green area)</result>
+			</line>
+			<line>
+				<text>Fuel pressure</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Oil pressure</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Warning lights</text>
+				<result>TESTED</result>
+			</line>
+			<line>
+				<text>Instrumentation (COM, NAV, ADF, GPS)</text>
+				<result>ON</result>
+			</line>
+			<line>
+				<text>Altimeter</text>
+				<result>SET</result>
+			</line>
+		</checklist>
+		
+		<checklist n="3">
+			<title>Taxiing</title>
+			<line>
+				<text>Parking brake</text>
+				<result>UNLOCKED</result>
+			</line>
+			<line>
+				<text>Brakes</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Turn indicator</text>
+				<result>CHECKED</result>
+			</line>
+		</checklist>
+		
+		<checklist n="4">
+			<title>Check point</title>
+			<line>
+				<text>Parking brake</text>
+				<result>LOCKED</result>
+			</line>
+			<line>
+				<text>Oil pressure</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Oil temp</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Fuel pressure</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Mixture</text>
+				<result>FULL RICH</result>
+			</line>
+			<line>
+				<text>Carb. heat</text>
+				<result>COLD (pushed)</result>
+			</line>
+			<line>
+				<text>RPM</text>
+				<result>2000</result>
+			</line>
+			<line>
+				<text>Magnetos</text>
+				<result>L then R then BOTH</result>
+			</line>
+			<line>
+				<text>RPM</text>
+				<result>1200</result>
+			</line>
+		</checklist>
+		
+		
+		<checklist n="5">
+			<title>Before take-off procedure</title>
+			<line>
+				<text>Magnetos</text>
+				<result>BOTH</result>
+			</line>
+			<line>
+				<text>Fuel selector</text>
+				<result>OPEN</result>
+			</line>
+			<line>
+				<text>Electrical pump</text>
+				<result>ON</result>
+			</line>
+			<line>
+				<text>Instrumentation</text>
+				<result>SET</result>
+			</line>
+			<line>
+				<text>Flaps</text>
+				<result>1 flap</result>
+			</line>
+			<line>
+				<text>RPM</text>
+				<result>1200</result>
+			</line>
+		</checklist>
+		
+		<checklist n="6">
+			<title>Take-off procedure</title>
+			<line>
+				<text>Parking brake</text>
+				<result>UNLOCKED</result>
+			</line>
+			<line>
+				<text>Throttle</text>
+				<result>FULL</result>
+			</line>
+			<line>
+				<text>Take-off speed</text>
+				<result>100km/h (54kt)</result>
+			</line>
+			<line>
+				<text>Climb speed</text>
+				<result>120km/h (65kt)</result>
+			</line>
+			<line>
+				<text>Electrical pump</text>
+				<result>OFF</result>
+			</line>
+			<line>
+				<text>Fuel pressure</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Flaps</text>
+				<result>UP</result>
+			</line>
+		</checklist>
+		
+		<checklist n="7">
+			<title>Periodicaly during cruise</title>
+			<line>
+				<text>Fuel</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Radio</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Engine</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Direction</text>
+				<result>CHECKED</result>
+			</line>
+			<line>
+				<text>Altitude</text>
+				<result>CHECKED</result>
+			</line>
+		</checklist>
+		
+		<checklist n="8">
+			<title>Descent / approach check</title>
+			<line>
+				<text>Mixture</text>
+				<result>FULL RICH</result>
+			</line>
+			<line>
+				<text>Electrical pump</text>
+				<result>ON</result>
+			</line>
+			<line>
+				<text>Flaps</text>
+				<result>above 170km/h (92kt) : 1 flap </result>
+			</line>
+			<line>
+				<text>Speed</text>
+				<result>150km/h (81kt)</result>
+			</line>
+		</checklist>
+		
+		<checklist n="9">
+			<title>Final check</title>
+			<line>
+				<text>Carb. heat</text>
+				<result>COLD (pushed)</result>
+			</line>
+			<line>
+				<text>Flaps</text>
+				<result>above 150km/h (81kt) : 2 flaps </result>
+			</line>
+			<line>
+				<text>Speed</text>
+				<result>110km/h (60kt)</result>
+			</line>
+		</checklist>
+		
+		<checklist n="10">
+			<title>After landing check</title>
+			<line>
+				<text>Electrical pump</text>
+				<result>OFF</result>
+			</line>
+			<line>
+				<text>Flaps</text>
+				<result>UP</result>
+			</line>
+			<line>
+				<text>Instrumentation (COM, NAV, ADF, GPS)</text>
+				<result>OFF</result>
+			</line>
+		</checklist>
+		
+		<checklist n="11">
+			<title>Engine shutdown</title>
+			<line>
+				<text>Parking brake</text>
+				<result>LOCKED</result>
+			</line>
+			<line>
+				<text>RPM</text>
+				<result>1000</result>
+			</line>
+			<line>
+				<text>Mixture</text>
+				<result>IDLE CUT-OFF</result>
+			</line>
+			<line>
+				<text>Magnetos</text>
+				<result>OFF</result>
+			</line>
+			<line>
+				<text>Alternator</text>
+				<result>OFF</result>
+			</line>
+			<line>
+				<text>Electric master</text>
+				<result>OFF</result>
+			</line>
+			<line>
+				<text>Fuel selector</text>
+				<result>CLOSED</result>
+			</line>
+		</checklist>
+	</checklists>
+</PropertyList>

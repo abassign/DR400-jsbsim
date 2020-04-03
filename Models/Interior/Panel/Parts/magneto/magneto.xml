@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+ <path>mags.ac</path>
+
+ <animation>
+   <object-name>click-L</object-name>
+   <object-name>click-R</object-name>
+   <object-name>key</object-name>
+   <object-name>magsw</object-name>
+ </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>click-L</object-name>
+    <object-name>click-R</object-name>
+    <object-name>key</object-name>
+    <object-name>magsw</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>mag_switch.dds</texture>
+  </animation>
+
+ <animation>
+   <type>knob</type>
+   <object-name>click-R</object-name>
+   <visible>false</visible>
+   <action>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <factor>1</factor>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+   <hovered>
+     <binding>
+       <command>set-tooltip</command>
+       <tooltip-id>magneto-switch</tooltip-id>
+       <label>Magnetos: %s</label>
+       <property>controls/engines/engine/magnetos</property>
+       <mapping>nasal</mapping>
+       <script>
+         var m = getprop('controls/engines/engine/magnetos');
+         if (m == 1) return 'RIGHT';
+         if (m == 2) return 'LEFT';
+         if (m == 3) return 'BOTH';
+         return 'OFF';
+       </script>
+     </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>knob</type>
+   <object-name>click-L</object-name>
+   <visible>false</visible>
+   <action>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <factor>1</factor>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+   <hovered>
+     <binding>
+       <command>set-tooltip</command>
+       <tooltip-id>magneto-switch</tooltip-id>
+       <label>Magnetos: %s</label>
+       <property>controls/engines/engine/magnetos</property>
+       <mapping>nasal</mapping>
+       <script>
+         var m = getprop('controls/engines/engine/magnetos');
+         if (m == 1) return 'RIGHT';
+         if (m == 2) return 'LEFT';
+         if (m == 3) return 'BOTH';
+         return 'OFF';
+       </script>
+     </binding>
+   </hovered>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>click-R</object-name>
+   <visible>false</visible>
+   <action>
+     <name>increase mags: click</name>
+     <button>0</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+   <action>
+     <name>decrease mags: scroll</name>
+     <button>3</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+   <action>
+     <name>increase mags: scroll</name>
+     <button>4</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>click-L</object-name>
+   <visible>false</visible>
+   <action>
+     <name>decrease mags: click</name>
+     <button>0</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+   <action>
+     <name>decrease mags: scroll</name>
+     <button>3</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+   <action>
+     <name>increase mags: scroll</name>
+     <button>4</button>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/engines/engine/magnetos</property>
+       <step>1</step>
+       <min>0</min>
+       <max>3</max>
+     </binding>
+   </action>
+ </animation>
+
+ <!--   key animations  -->   
+ <animation>
+  <name>mags-key</name>
+  <type>rotate</type>
+  <object-name>key</object-name>
+  <property>/controls/engines/engine/magnetos-pos</property>
+  <factor>35</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  
+</PropertyList>
+
+

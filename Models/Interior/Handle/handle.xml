@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>handle.ac</path>
+
+  <animation>
+    <object-name>manche</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>manche</object-name>
+    <condition>
+      <property>sim/model/config/show-yokes</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>manche</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>handle.dds</texture>
+  </animation>
+
+<!-- Aileron -->
+  <animation>
+    <type>rotate</type>
+    <object-name>manche</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>10</factor>
+
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+<!-- Gouverne de Profondeur -->
+  <animation>
+    <type>rotate</type>
+    <object-name>manche</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>19</factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+

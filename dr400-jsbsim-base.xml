@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2013 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+ # changes by D-EKSW
+
+##########################################-->
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+    <flight-model archive="y">jsb</flight-model>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <sound>
+      <path archive="y">Aircraft/DR400-jsbSim/Sounds/dr400-jsbsim-sound.xml</path>    
+    </sound>
+	
+    <model>
+      <show-immat type="bool">1</show-immat>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <config>
+        <show-pilot type="bool">0</show-pilot>
+        <show-copilot type="bool">0</show-copilot>
+        <show-yokes type="bool">1</show-yokes>
+        <glass-reflection type="bool">0</glass-reflection>
+        <glass-reflection-instruments type="bool">1</glass-reflection-instruments>
+        <details-high type="bool">0</details-high>
+        <use-dds type="bool">0</use-dds>
+      </config>
+    </model>
+
+    <flaps>
+      <setting>0.00</setting>
+      <setting>0.25</setting> <!-- 15 deg -->
+      <setting>1.00</setting> <!-- 60 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0">0</int>
+        <int type="int" n="1">0</int>
+        <int type="int" n="2">0</int>
+        <int type="int" n="3">0</int>
+        <int type="int" n="4">0</int>
+        <int type="int" n="5">0</int>
+        <int n="6" alias="/sim/model/show-immat"/>
+        <int n="10" alias="/sim/model/lights/nav-lights/state"/>
+        <int n="11" alias="/sim/model/lights/landing-lights/state"/>
+        <int n="12" alias="/sim/model/lights/taxi-lights/state"/>
+        <int n="13" alias="/sim/model/lights/strobe-lights/state"/>
+        <float n="0" alias="/position/gear-agl-m">       0 </float>  <!-- 11 altitude for MP shadow -->
+        <float n="1" alias="/controls/flight/aileron">   0 </float>
+        <float n="2" alias="/controls/flight/elevator">  0 </float>
+        <float n="3" alias="/controls/flight/rudder">    0 </float>
+
+        <float n="4" alias="/systems/electrical/outputs/nav-lights">     0 </float>
+        <float n="5" alias="/systems/electrical/outputs/landing-lights"> 0 </float>
+        <float n="6" alias="/systems/electrical/outputs/taxi-lights">    0 </float>
+        <float n="7" alias="/systems/electrical/outputs/strobe-lights">  0 </float>
+        <float n="8" alias="/systems/electrical/volts">                  0 </float>
+      </generic>
+    </multiplay>
+
+    <help>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+        <line/>
+        <line>========== Engines Start Checklist ==========</line>
+        <line>1 - Tank selector -> PRINCIPAL (main) on 180 ch</line>
+        <line>2 - BATtery -> ON</line>
+        <line>3 - ALTernator -> ON</line>
+        <line>4 - Magnetos: R, L, Both</line>
+        <line>5 - Electrical fuel pump -> ON </line>
+        <line>6 - Mixture -> Full Rich</line>
+        <line>7 - Throttle -> 0 to 1/4</line>
+        <line>8 - Starter</line>
+        <line/>
+        <line>========== Engines Autostart ================</line>
+        <line>1 - Open Robin DR 400 dialog (Robin DR 400 > Options)</line>
+        <line>2 - Click on Autostart button</line>
+        <line>3 - Press "s" key</line>
+        <line/>
+        <line> Dashboard lighting (ECLAIRAGE 1)</line>
+        <line/>
+        <line>=============================================</line>
+        <line> Release brakes (FREIN DE PARC) </line>
+        <line>=============================================</line>
+        <line/>
+        <line>========== Procedures =======================</line>
+        <line>Takeoff -> Flaps 1st notch. Full throttle, rotate at 100 km/h</line>
+        <line>Climbout -> 130 km/h then 150 km/h</line>
+        <line>Cruise -> 2350 to 2700 RPM (depending on altitude)</line>
+        <line>VNE 308 km/h</line>
+        <line>Approach (no wind) 150 km/h </line>
+        <line>Flaps 1st notch, max 170 km/h </line>
+        <line>Final 125 km/h </line>
+        <line>Full flaps, max 150 km/h </line>
+        <line/>
+    </help>
+
+    <menubar include="Dialogs/dr400-menu.xml"/>
+    
+    <!--<flight-recorder>
+      <replay-config type="int">0</replay-config>
+      <config n="0" include="Aircraft/Generic/flightrecorder/generic-piston-propeller-1.xml">
+        <name type="string">DR 400 Flight Recorder</name>
+        <signal>
+          <type>float</type>
+          <property type="string">/position/gear-agl-m</property>
+          <interpolation>linear</interpolation>
+        </signal>
+      </config>
+    </flight-recorder>-->
+
+    <rendering>
+      <shadows>
+        <filtering type="int">1</filtering>
+      </shadows>
+    </rendering>
+
+    <systems>
+      <electrical>
+        <path></path>
+      </electrical>
+    </systems>
+
+  </sim>
+
+  <autopilot>
+    <config>
+      <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
+      <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
+      <target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
+      <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+      <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+      <integral-contribution type="float">0.01</integral-contribution>
+      <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+      <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+    </config>
+  </autopilot>
+ 
+  <input>
+    <keyboard include="Nasal/dr400-keyboard.xml"/>  
+  </input>
+ 
+  <instrumentation>
+    <elt>
+      <on type="bool">0</on>
+      <armed type="bool">1</armed>
+      <test type="bool">0</test>
+    </elt>
+    <garmin196>
+      <texture-file>../../DR400-jsbSim/Models/Interior/Panel/Instruments/garmin196/coque1.png</texture-file>
+    </garmin196>
+    <comm n="0">
+      <power-btn type="bool">false</power-btn>
+      <volume type="double">0</volume>
+    </comm>
+    <nav n="0">
+      <power-btn type="bool">false</power-btn>
+      <volume type="double">0</volume>
+    </nav>
+    <adf n="0">      
+      <power-btn type="bool">false</power-btn>
+      <volume-norm type="double">0</volume-norm>
+      <adf-btn type="bool">true</adf-btn>
+    </adf>
+    <attitude-indicator>
+      <config>
+        <tumble-flag archive="y" type="bool">true</tumble-flag>
+      </config>
+    </attitude-indicator>
+    <encoder>
+      <serviceable type="bool">true</serviceable>
+    </encoder>
+  </instrumentation>
+  
+  <limits>
+    <max-flap-extension-speed>
+      <flaps type="double">0.2</flaps>
+      <speed type="double">92</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+      <flaps type="double">0.99</flaps>
+      <speed type="double">81</speed>
+    </max-flap-extension-speed>
+    <vne type="double">166</vne>
+  </limits>
+
+  <payload>
+    <weight>
+      <name type="string">Pilot</name>
+      <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">250.0</max-lb>
+    </weight>
+    <weight>
+      <name type="string">Copilot</name>
+      <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">250.0</max-lb>
+    </weight>
+    <weight>
+      <name type="string">Left Passenger</name>
+      <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">200.0</max-lb>
+    </weight>
+    <weight>
+      <name type="string">Right Passenger</name>
+      <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">200.0</max-lb>
+    </weight>
+    <weight>
+      <name type="string">Luggage</name>
+      <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+      <min-lb type="double">0.0</min-lb>
+      <max-lb type="double">200.0</max-lb>
+    </weight>
+  </payload>
+
+  <controls>
+    <gear>
+      <brake-parking type="bool">1</brake-parking>
+      <brake-parking-pos type="double">1.0</brake-parking-pos>
+    </gear>
+    <throttle-coupled type="bool">1</throttle-coupled>
+    <mixture-coupled type="bool">1</mixture-coupled>
+    <prop-coupled type="bool">1</prop-coupled>
+    <movement-scale>0.025</movement-scale>
+    <engines>
+      <engine n="0">
+        <starter_cmd type="bool">0</starter_cmd>
+        <magnetos type="int">0</magnetos>
+      </engine>
+    </engines>
+    <fuel>
+      <selected-tank type="int">-1</selected-tank>
+      <selected-tank-pos type="double">0</selected-tank-pos>
+      <selected-tank-lock type="bool">0</selected-tank-lock>
+    </fuel>
+    <flight>
+      <aileron-trim type="double">0.021</aileron-trim>
+      <rudder-trim type="double">0.016</rudder-trim>
+    </flight>
+  </controls>
+ 
+  <nasal>
+    <dr400>
+      <file/> <!-- First line is not loaded... -->
+      <file>Aircraft/DR400-jsbSim/Nasal/light.nas</file>
+      <file>Aircraft/DR400-jsbSim/Nasal/liveries.nas</file>
+      <file>Aircraft/DR400-jsbSim/Nasal/immat.nas</file>
+      <file>Aircraft/DR400-jsbSim/Nasal/electrical.nas</file>
+      <file>Aircraft/DR400-jsbSim/Nasal/interpolate.nas</file>
+      <file>Aircraft/DR400-jsbSim/Nasal/dr400-common.nas</file>
+      <file>Aircraft/Generic/limits.nas</file>
+    </dr400>
+    <garmin196>
+      <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
+    </garmin196>
+    <kr87>
+      <file>Aircraft/DR400-jsbSim/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
+    </kr87>
+  </nasal>
+   
+</PropertyList>

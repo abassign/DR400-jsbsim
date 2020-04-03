@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<initialize name="reset00">
+  <ubody unit="FT/SEC"> 0.0412485 </ubody> 
+  <vbody unit="FT/SEC"> 0.00377641 </vbody> 
+  <wbody unit="FT/SEC"> -6.6926e-005 </wbody> 
+  <phi unit="DEG"> 0.00353121 </phi>
+  <theta unit="DEG"> -0.00278245 </theta>
+  <psi unit="DEG"> 5.13649 </psi>
+  <longitude unit="DEG"> 0 </longitude>
+  <latitude unit="DEG"> 0 </latitude>
+  <altitude unit="FT"> -0.413524 </altitude>
+</initialize>

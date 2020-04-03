@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-180
+ # DR400-jsbSim by PAF team
+ # Sept 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<piston_engine name="LYCOMING O-360 A3A">
+  <minmp unit="INHG">          10.0 </minmp>
+  <maxmp unit="INHG">         28.5 </maxmp>
+  <displacement unit="IN3"> 342.00 </displacement>
+  <maxhp>        180.00 </maxhp>
+  <cycles>         4.0 </cycles>
+  <idlerpm>      500.0 </idlerpm>
+  <maxrpm>      2700.0 </maxrpm>
+  <maxthrottle>    1.0 </maxthrottle><!-- Deprecated -->
+  <minthrottle>    0.1 </minthrottle><!-- Deprecated -->
+  <sparkfaildrop>  0.1 </sparkfaildrop>
+  <volumetric-efficiency> 0.85 </volumetric-efficiency>
+</piston_engine>
+

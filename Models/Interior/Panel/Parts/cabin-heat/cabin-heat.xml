@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>cabin-heat.ac</path>
+ 
+  
+  <animation>
+    <object-name>manette001</object-name>
+    <object-name>manette002</object-name>
+    <object-name>manette003</object-name>
+    <object-name>sphere001</object-name>
+    <object-name>sphere002</object-name>
+    <object-name>sphere003</object-name>
+    <object-name>numeros</object-name>
+    <object-name>Plane</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>manette001</object-name>
+    <object-name>manette002</object-name>
+    <object-name>manette003</object-name>
+    <object-name>sphere001</object-name>
+    <object-name>sphere002</object-name>
+    <object-name>sphere003</object-name>
+    <object-name>numeros</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>colors_chauffage.dds</texture>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Plane</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>plaque_chauffage.dds</texture>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+   <visible>true</visible>
+   <object-name>manette001</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+       <property>controls/pressurization/outflow-valve</property>
+      <value type="bool">true</value>
+    </binding>          
+   </action>
+  </animation>
+
+  <animation>
+   <type>translate</type>
+   <object-name>manette001</object-name>
+   <property>controls/pressurization/outflow-valve</property>
+   <factor>0.018</factor>
+   <axis>
+    <x> 6 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+   </axis>
+  </animation>
+  
+   <!--animation>
+   <type>pick</type>
+   <visible>true</visible>
+   <object-name>manette002</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+       <property>controls/pressurization/outflow-valve</property>
+      <value type="bool">true</value>
+    </binding>          
+   </action>
+  </animation>
+
+  <animation>
+   <type>translate</type>
+   <object-name>manette002</object-name>
+   <property>controls/pressurization/outflow-valve</property>
+   <factor>0.018</factor>
+   <axis>
+    <x> 6 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+   </axis>
+  </animation>
+  
+   <animation>
+   <type>pick</type>
+   <visible>true</visible>
+   <object-name>manette003</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+       <property>controls/pressurization/outflow-valve</property>
+      <value type="bool">true</value>
+    </binding>          
+   </action>
+  </animation>
+
+  <animation>
+   <type>translate</type>
+   <object-name>manette003</object-name>
+   <property>controls/pressurization/outflow-valve</property>
+   <factor>0.018</factor>
+   <axis>
+    <x> 6 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+   </axis>
+  </animation-->
+  
+</PropertyList>

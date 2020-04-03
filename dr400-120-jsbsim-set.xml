@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2013 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList include="dr400-jsbsim-base.xml">
+
+  <sim>
+    <description>Robin DR 400-120 (JSBSim, Rembrandt)</description>
+    <author>PAF team, Guillaume CHAUVAT, Daniel DUBREUIL (FDM JSBSim), Laurent HAYVEL, Christian THIRIOT (2012-2013, textures, audio,3D), Emmanuel BARANGER (3D)</author>
+
+    <aero archive="y">dr400-120-jsbsim</aero>
+
+    <startup>
+      <splash-texture>Aircraft/DR400-jsbSim/dr400-120-jsbsim-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path archive="y">Aircraft/DR400-jsbSim/Models/dr400-120-jsbsim.xml</path>
+    </model>
+
+    <help>
+      <title>Robin DR400 120cv</title>
+    </help>
+  </sim>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <level-gal_us>25.8</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <nasal>
+    <dr400>
+      <file>Aircraft/DR400-jsbSim/Nasal/dr400-120.nas</file>
+    </dr400>
+  </nasal>
+
+</PropertyList>
+

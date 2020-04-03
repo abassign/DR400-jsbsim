@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>Robin DR 400</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+      <!--<item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>dr400.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Show/Hide pilot</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-pilot</property>
+        </binding>
+      </item>-->
+      <item>
+        <label>Options</label>
+        <binding>
+          <command>nasal</command>
+          <script>dr400.config_dlg.open()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Checklists</label>
+	<binding>
+	  <command>dialog-show</command>
+	  <dialog-name>checklists</dialog-name>
+	</binding>
+      </item>
+    </menu>
+  </default>
+
+</PropertyList>
+

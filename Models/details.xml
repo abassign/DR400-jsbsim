@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>details.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>ecrou_rondelleG</object-name>
+    <object-name>ecrous-canopy</object-name>
+    <object-name>ecrousAR</object-name>
+    <object-name>ecrous_prof</object-name>
+    <object-name>ecrous_verriere</object-name>
+    <object-name>vis-bol</object-name>
+    <object-name>vis_capot</object-name>
+    <object-name>vis_dessous</object-name>
+    <object-name>vis_empennageD</object-name>
+    <object-name>vis_empennageG</object-name>
+    <object-name>vis_laterales</object-name>
+    <object-name>vis_prof</object-name>
+    <object-name>vis_sabotAVD</object-name>
+    <object-name>vis_sabotAVG</object-name>
+    <object-name>vis_sabotD</object-name>
+    <object-name>vis_sabotG</object-name>
+    <object-name>vis_support_aileG</object-name>
+    <object-name>vis_support_ailes</object-name>
+    <object-name>vis_sur_ailes</object-name>
+    <object-name>vis_sur_caches</object-name>
+    <object-name>vis_toit</object-name>
+    <object-name>anneaux</object-name>
+    <object-name>bouchons-dessous</object-name>
+    <object-name>bouchons-dessus</object-name>
+  </animation>
+
+</PropertyList>

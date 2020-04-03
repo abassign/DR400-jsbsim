@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+  <path>carb-heat.ac</path>
+  
+  <animation>
+    <object-name>manette</object-name>
+    <object-name>coulissant</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>manette</object-name>
+    <object-name>coulissant</object-name>
+
+    <condition>
+      <property>/sim/model/config/use-dds</property>
+    </condition>
+
+    <texture>carb-heat.dds</texture>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+   <visible>true</visible>
+   <object-name>manette</object-name>
+   <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+       <property>controls/anti-ice/engine[0]/carb-heat</property>
+      <value type="bool">true</value>
+    </binding>          
+   </action>
+  </animation>
+
+  <animation>
+   <type>translate</type>
+   <object-name>manette</object-name>
+   <property>controls/anti-ice/engine[0]/carb-heat-pos</property>
+   <factor>0.008</factor>
+   <axis>
+    <x> 1.5 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+   </axis>
+  </animation>
+
+</PropertyList>

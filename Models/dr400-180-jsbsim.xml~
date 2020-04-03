@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-180-jsbSim by PAF team
+ # April 2013 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList include="dr400-jsbsim.xml">
+  <nasal>
+    <load>
+      if ( getprop("/sim/model/config/use-dds") )
+        var livery_update = aircraft.livery_update.new("Aircraft/DR400-jsbSim/Models/Liveries-dds", 10);
+      else
+        var livery_update = aircraft.livery_update.new("Aircraft/DR400-jsbSim/Models/Liveries", 10);
+      print("..:: Aircraft loaded: Robin DR400 180Ch by PAF team ::..");
+    </load>
+     
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+</PropertyList>
+

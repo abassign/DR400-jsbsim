@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<piston_engine name="Lycoming O-235">
+  <minmp unit="INHG">          11.5 </minmp>
+  <maxmp unit="INHG">         30.0 </maxmp>
+  <cylinders>                    4 </cylinders>
+  <displacement unit="IN3">  233.3 </displacement>
+  <bore unit="IN">           4.375 </bore>
+  <stroke unit="IN">         3.875 </stroke>
+  <cycles>                     4.0 </cycles>
+  <idlerpm>                  450.0 </idlerpm>
+  <maxrpm>                  2800.0 </maxrpm>
+  <maxhp>                      118 </maxhp>
+  <sparkfaildrop>             0.09 </sparkfaildrop>
+</piston_engine>
