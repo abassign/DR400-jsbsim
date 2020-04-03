@@ -24,7 +24,7 @@
      <desc>Aktiviere NASAL</desc>
      <binding>
        <command>nasal</command>
-       <script>egal.irgendwas();</script> <!-- meine/egal ist DEVICE in -set XML, irgendwas ist func in meine.nas -->
+       <script>dr400.resetBattery();</script> <!-- Battery.charge_percent = 1.0 in eletrical.nas -->
      </binding>
    </key>
 

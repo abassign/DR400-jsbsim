@@ -39,7 +39,7 @@
         <label>Options</label>
         <binding>
           <command>nasal</command>
-          <script>dr400.config_dlg.open()</script>
+          <script>dr400.config_dlg.open()</script> <!-- Battery recharge? -->
         </binding>
       </item>
       <item>

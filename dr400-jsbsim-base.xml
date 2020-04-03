@@ -76,6 +76,10 @@
       <key>
         <name>d</name>
         <desc>Open/Close canopy</desc>
+	<name>s</name>
+	<desc>Starter (démarreur)</desc>
+	<name>l</name>
+	<desc>(re-)load the battery (small L)</desc>
       </key>
         <line/>
         <line>========== Engines Start Checklist ==========</line>

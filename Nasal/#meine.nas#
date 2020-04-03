@@ -5,6 +5,7 @@ var irgendwas = func() {
      
      gui.popupTip("Current METAR: "~metarString,10);
 
+
 }
 
 print("meine.nas... has been loaded successfully.");

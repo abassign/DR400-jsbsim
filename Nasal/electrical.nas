@@ -27,7 +27,13 @@ var load = 0.0;
 ##################### Définition de la batterie ############################
 ############################################################################
 #var battery = Battery.new(volts,amps,amp_hours,charge_percent,charge_amps);
-#              Battery.new(28.0, 90.0, 120.0, 1.0, 90.0);  
+#              Battery.new(28.0, 90.0, 120.0, 1.0, 90.0);
+
+var resetBattery = func() {
+             battery.charge_percent = 1.0;
+	     gui.popupTip("Battery has been recharged...",10);
+}
+
 Battery = {
     new : func {
         m = { parents : [Battery] };
@@ -40,7 +46,7 @@ Battery = {
     },
 
     apply_load : func {
-        var amphrs_used = arg[0] * arg[1] / 3600.0;
+        var amphrs_used = arg[0] * arg[1] / 36000.0;   # was: 3600.0 for 1s
         var percent_used = amphrs_used / me.amp_hours;
         me.charge_percent -= percent_used;
         if ( me.charge_percent < 0.0 ) {
@@ -145,8 +151,6 @@ var elecInit = setlistener("/sim/signals/fdm-initialized", func {
 
     settimer(update_electrical,1);
     print("Electrical System ... OK");
-    print("Electrocal System ... Battery Charge:");
-    print(battery.arg[3]);print("%");
     removelistener(elecInit);
 });
 
@@ -368,5 +372,5 @@ var update_electrical = func {
     var dt = time - last_time;
     var last_time = time;
     update_virtual_bus(dt);
-    settimer(update_electrical, 0);
+    settimer(update_electrical, 0.1);  # war: 0, 1 Sek. recht lang REF: apply_load
 }
