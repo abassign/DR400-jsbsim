@@ -8,6 +8,7 @@
  # Sept 2012 : Modified for DR400-180 (dany)
  # http://equipe-flightgear.forumactif.com
 
+# D-EKSW in April 2020
 ##########################################-->
 
 <fdm_config name="DR400-180" version="2.0" release="BETA"

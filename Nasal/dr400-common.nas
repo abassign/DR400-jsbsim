@@ -295,7 +295,7 @@ global_system = func{
   terrain_survol();
   EngineMain.update(0);
 
-  settimer(global_system, 0);
+  settimer(global_system, 0.01); # was:0
 
 }
 

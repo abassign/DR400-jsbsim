@@ -6,7 +6,7 @@
  # April 2013 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
- # changes by D-EKSW
+ # changes by D-EKSW April 2020
 
 ##########################################-->
 
@@ -79,7 +79,7 @@
 	<name>s</name>
 	<desc>Starter (démarreur)</desc>
 	<name>l</name>
-	<desc>(re-)load the battery (small L)</desc>
+	<desc>Reload the Battery</desc>
       </key>
         <line/>
         <line>========== Engines Start Checklist ==========</line>

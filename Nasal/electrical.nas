@@ -329,7 +329,7 @@ var avionics_bus = func(bus_volts) {
         OutPuts.getNode("comm",1).setValue(0.0);
     }
 #
-#    if (props.globals.getNode("/instrumentation/kt76a/mode").getValue() > 0 and props.globals.getNode("/controls/switches/transponder").getBoolValue()){
+#    if (props.globals.getNode("/instrumentation/transponder/inputs/knob-mode").getValue() > 0 and props.globals.getNode("/controls/switches/transponder").getBoolValue()){
 #        OutPuts.getNode("transponder",1).setValue(bus_volts);
 #        load += 0.00015;
 #    } else {

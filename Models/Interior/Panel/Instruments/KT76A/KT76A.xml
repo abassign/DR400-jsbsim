@@ -6,6 +6,7 @@
  # April 2012 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
+ # edited by D-EKSW/TeXnicer in April 2020
 ##########################################-->
 
 <PropertyList>
@@ -95,7 +96,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Dial1000</object-name>
-    <property>instrumentation/kt76a/digit1</property>
+    <property>instrumentation/transponder/inputs/digit[3]</property>
     <factor>45</factor>
     <center>
       <x-m>  0.004 </x-m>
@@ -112,7 +113,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Knob1000</object-name>
-    <property>instrumentation/kt76a/digit1</property>
+    <property>/instrumentation/transponder/inputs/digit[3]</property>
     <factor>45</factor>
     <center>
       <x-m>  0.014 </x-m>
@@ -135,14 +136,27 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit1</property>
+        <property>/instrumentation/transponder/inputs/digit[3]</property>
         <step type="int">-1</step>
         <min>0</min>
         <max>8</max>
         <wrap>true</wrap>
       </binding>
     </action>
+    <hovered>
+      <binding>
+	<command>set-tooltip</command>
+	<tooltip-id>transponder-squawk</tooltip-id>
+	<label>Squawk: %s</label>
+	<property>/instrumentation/transponder/id-code</property>
+	<mapping>nasal</mapping>
+	<script>
+	  return sprintf("%04d", arg[0]);
+	</script>
+      </binding>
+    </hovered>
   </animation>
+  
 
   <animation>
     <type>pick</type>
@@ -153,7 +167,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit1</property>
+	<property>/instrumentation/transponder/inputs/digit[3]</property>
         <step type="int">1</step>
         <min>0</min>
         <max>8</max>
@@ -165,7 +179,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Dial100</object-name>
-    <property>instrumentation/kt76a/digit2</property>
+    <property>/instrumentation/transponder/inputs/digit[2]</property>
     <factor>45</factor>
     <center>
       <x-m>  0.004 </x-m>
@@ -182,7 +196,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Knob100</object-name>
-    <property>instrumentation/kt76a/digit2</property>
+    <property>/instrumentation/transponder/inputs/digit[2]</property>
     <factor>45</factor>
     <center>
       <x-m> 0.014 </x-m>
@@ -205,7 +219,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit2</property>
+        <property>/instrumentation/transponder/inputs/digit[2]</property>
         <step type="int">-1</step>
         <min>0</min>
         <max>8</max>
@@ -223,7 +237,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit2</property>
+       	<property>/instrumentation/transponder/inputs/digit[2]</property>
         <step type="int">1</step>
         <min>0</min>
         <max>8</max>
@@ -235,7 +249,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Dial10</object-name>
-    <property>instrumentation/kt76a/digit3</property>
+    <property>/instrumentation/transponder/inputs/digit[1]</property>
     <factor>45</factor>
     <center>
       <x-m>  0.004 </x-m>
@@ -252,7 +266,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Knob10</object-name>
-    <property>instrumentation/kt76a/digit3</property>
+    <property>/instrumentation/transponder/inputs/digit[1]</property>
     <factor>45</factor>
     <center>
       <x-m> 0.014 </x-m>
@@ -275,7 +289,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit3</property>
+        <property>/instrumentation/transponder/inputs/digit[1]</property>
         <step type="int">-1</step>
         <min>0</min>
         <max>8</max>
@@ -293,7 +307,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit3</property>
+        <property>/instrumentation/transponder/inputs/digit[1]</property>
         <step type="int">1</step>
         <min>0</min>
         <max>8</max>
@@ -305,7 +319,7 @@
   <animation> 
     <type>rotate</type>
     <object-name>Dial1</object-name>
-    <property>instrumentation/kt76a/digit4</property>
+    <property>/instrumentation/transponder/inputs/digit[0]</property>
     <factor>45</factor>
     <center>
       <x-m>  0.004 </x-m>
@@ -322,7 +336,8 @@
   <animation> 
     <type>rotate</type>
     <object-name>Knob1</object-name>
-    <property>instrumentation/kt76a/digit4</property>
+    <!--<property>/instrumentation/kt76a/digit4</property>-->
+    <property>/instrumentation/transponder/inputs/digit[0]</property>
     <factor>45</factor>
     <center>
       <x-m> 0.014 </x-m>
@@ -345,7 +360,8 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit4</property>
+        <!--<property>/instrumentation/kt76a/digit4</property>-->
+	<property>/instrumentation/transponder/inputs/digit[0]</property>
         <step type="int">-1</step>
         <min>0</min>
         <max>8</max>
@@ -363,7 +379,8 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/digit4</property>
+        <!--<property>/instrumentation/kt76a/digit4</property>-->
+	<property>/instrumentation/transponder/inputs/digit[0]</property>
         <step type="int">1</step>
         <min>0</min>
         <max>8</max>
@@ -372,6 +389,59 @@
     </action>
   </animation>
 
+  <!-- Taken from C172p in April 2020 -->
+  <animation>
+        <type>knob</type>
+        <object-name>KnobMode</object-name>
+        <visible>true</visible>
+        <drag-scale-px>20</drag-scale-px>
+        <action>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/transponder/inputs/knob-mode</property>
+<!--                <property alias="../../../../params/knob-mode"/>-->
+                <wrap>0</wrap>
+                <value>0</value>
+                <!-- OFF -->
+                <value>1</value>
+                <!-- SBY -->
+                <value>4</value>
+                <!-- ON  -->
+                <value>5</value>
+                <!-- ALT -->
+                <value>2</value>
+                <!-- TST -->
+            </binding>
+	    <!-- Sound
+            <binding>
+                <command>nasal</command>
+                <script>c172p.click("kt76a-mode")</script>
+            </binding>
+            -->
+        </action>
+	
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-mode-btn</tooltip-id>
+                <label>Mode: %s</label>
+                <property>instrumentation/transponder/inputs/knob-mode</property>
+		<!--
+                <property alias="../../../../params/knob-mode"/>
+		-->
+		<mapping>nasal</mapping>
+                <script>
+                  var m = arg[0];
+                  if(m == 1) return 'STANDBY';
+                  if(m == 4) return 'ON';
+                  if(m == 5) return 'ALTITUDE';
+                  if(m == 2) return 'TEST';
+                  return 'OFF';
+                </script>
+            </binding>
+        </hovered>
+  </animation>
+  <!--
   <animation>
     <type>pick</type>
     <visible>false</visible>
@@ -381,7 +451,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/mode</property>
+        <property>/instrumentation/transponder/inputs/mode</property>
         <step type="int">1</step>
         <min>0</min>
         <max>4</max>
@@ -398,18 +468,65 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>/instrumentation/kt76a/mode</property>
+        <property>/instrumentation/transponder/inputs/mode</property>
         <step type="int">-1</step>
         <min>0</min>
         <max>4</max>
       </binding>
     </action>
   </animation>
-
+  -->
+  <animation>
+        <type>rotate</type>
+        <object-name>KnobMode</object-name>
+        <!--<property>/instrumentation/transponder/inputs/knob-mode</property>-->
+        <property alias="../../params/knob-mode"/>
+        <factor>1</factor>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>45</dep>
+            </entry>
+            <entry>
+                <ind>4</ind>
+                <dep>90</dep>
+            </entry>
+            <entry>
+                <ind>5</ind>
+                <dep>135</dep>
+            </entry>
+            <entry>
+                <ind>2</ind>
+                <dep>180</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>-0.34993</x-m>
+            <y-m> 0.05394</y-m>
+            <z-m>-0.14354</z-m>
+        </center>
+	<!-- <center>
+            <x-m>-0.34993</x-m>
+            <y-m> 0.05394</y-m>
+            <z-m>-0.14354</z-m>
+        </center>
+	-->
+	
+        <axis>
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+  </animation>
+  <!--
   <animation> 
     <type>rotate</type>
     <object-name>KnobMode</object-name>
-    <property>instrumentation/kt76a/mode</property>
+    <property>/instrumentation/transponder/inputs/knob-mode</property>
     <factor>45</factor>
     <center>
       <x-m>  0.014 </x-m>
@@ -422,23 +539,23 @@
       <z>  0 </z>
     </axis>
   </animation>
-
-  <animation>
+  -->
+   <animation>
     <type>pick</type>
-    <visible>false</visible>
+    <visible>true</visible>
     <object-name>Ident</object-name>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>/instrumentation/kt76a/ident</property>
+        <property>/instrumentation/transponder/inputs/ident-btn</property>
         <value type="bool">true</value>
       </binding>          
       <mod-up>
         <binding>
           <command>property-assign</command>
-          <property>/instrumentation/kt76a/ident</property>
+          <property>/instrumentation/transponder/inputs/ident-btn</property>
           <value type="bool">false</value>
         </binding>
       </mod-up>
