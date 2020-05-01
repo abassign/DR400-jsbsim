@@ -9,7 +9,27 @@
 ##########################################-->
 
 <PropertyList>
+      
+  <key n="60">
+  <name> LT </name>
+  <desc>Toggle internal/external view</desc>
+  <binding>
+    <command>property-cycle</command>
+      <property>/sim/current-view/view-number</property>  
+      <value>0</value>
+      <value>7</value>
+  </binding>
+  </key>
 
+  <key n="62">
+    <name> GT </name>
+    <desc>Show METAR</desc>
+    <binding>
+      <command>nasal</command>
+      <script>texnicer.showMetar();</script>
+    </binding>
+  </key>
+  
    <key n="100">
     <name>d</name>
     <desc>Canopy</desc>
@@ -28,6 +48,22 @@
      </binding>
    </key>
 
+   <key n="34">
+   <name>"</name>
+   <desc>Lade loader.nas</desc>
+   <binding>
+     <command>nasal</command>
+     <script>texnicer.loader();</script> <!-- loads another .nas; execute time off-set -->
+   </binding>
+ </key>
+ <key n="37">
+   <name>%</name>
+   <desc>load texnicer.showKey()</desc>
+   <binding>
+     <command>nasal</command>
+     <script>texnicer.showKey();</script>
+   </binding>
+ </key>
    
    <key n="115">
     <name>s</name>

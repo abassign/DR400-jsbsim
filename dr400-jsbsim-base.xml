@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 
 <!-- ########################################
 
@@ -6,7 +6,7 @@
  # April 2013 : Modified by PAF team
  # http://equipe-flightgear.forumactif.com
 
- # changes by D-EKSW April 2020
+ # changes by Carsten Vogel (TeXnicer) April 2020
 
 ##########################################-->
 
@@ -29,12 +29,12 @@
         <file type="string">default</file>
       </livery>
       <config>
-        <show-pilot type="bool">0</show-pilot>
-        <show-copilot type="bool">0</show-copilot>
+        <show-pilot type="bool">1</show-pilot>
+        <show-copilot type="bool">1</show-copilot>
         <show-yokes type="bool">1</show-yokes>
         <glass-reflection type="bool">0</glass-reflection>
         <glass-reflection-instruments type="bool">1</glass-reflection-instruments>
-        <details-high type="bool">0</details-high>
+        <details-high type="bool">1</details-high>
         <use-dds type="bool">0</use-dds>
       </config>
     </model>
@@ -76,21 +76,43 @@
       <key>
         <name>d</name>
         <desc>Open/Close canopy</desc>
+      </key>
+      <key>
 	<name>s</name>
-	<desc>Starter (démarreur)</desc>
+	<desc>Starter (demarreur)</desc>
+      </key>
+      <key>
 	<name>l</name>
 	<desc>Reload the Battery</desc>
       </key>
+      <key>
+	<name> &lt; </name>
+	<desc>Toggle internal/external view</desc>
+      </key>
+      <key>
+	<name>&gt;</name>
+	<desc>Show current METAR [texnicer.showMetar()]</desc>
+      </key>
+      <key>
+	<name>"</name>
+	<desc>Load texnicer.loader()</desc>
+      </key>
+      <key>
+	<name>%</name>
+	<desc>Load texnicer.showKey()</desc>
+      </key>
+
+      
         <line/>
         <line>========== Engines Start Checklist ==========</line>
-        <line>1 - Tank selector -> PRINCIPAL (main) on 180 ch</line>
-        <line>2 - BATtery -> ON</line>
-        <line>3 - ALTernator -> ON</line>
-        <line>4 - Magnetos: R, L, Both</line>
-        <line>5 - Electrical fuel pump -> ON </line>
-        <line>6 - Mixture -> Full Rich</line>
-        <line>7 - Throttle -> 0 to 1/4</line>
-        <line>8 - Starter</line>
+        <line>1 - Tank selector: Dial to Principal/Main</line>
+        <line>2 - Battery Switch: Switch On</line>
+        <line>3 - Anti-Collision-Light Switch: Switch On</line>
+        <line>4 - Magnetos: Turn to Both</line>
+        <line>5 - Electrical Fuel Pump Swtich: Switch On</line>
+        <line>6 - Mixture Lever: Set Full Rich</line>
+        <line>7 - Throttle Lever: Open approx. 1/4</line>
+        <line>8 - Starter: Engage</line>
         <line/>
         <line>========== Engines Autostart ================</line>
         <line>1 - Open Robin DR 400 dialog (Robin DR 400 > Options)</line>
